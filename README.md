@@ -92,4 +92,5 @@ $ yarn dev
 ```bash
 1.image文件夹一定要按照规则放置（放在public文件夹下面）
 2.添加图片之后需要按照对应的位置更新 searchJson.tsx 文件
+3.json文件中图片的src为image/一级目录/二级目录/名字，图片命名规范在xmind里面 eg：image/character/adult/halfbody/1-2-1-1.webp
 ```

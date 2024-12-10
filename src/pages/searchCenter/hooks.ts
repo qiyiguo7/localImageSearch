@@ -44,7 +44,6 @@ export default () => {
     }
   ) => {
     const arr = info.node?.list || [];
-    console.log(info.node, "nodenodenodenode");
     const showFlag = showSearchArr.indexOf(info.node?.key) > -1;
     setSearchCondition(showFlag);
     setAllImgList(arr);
@@ -69,6 +68,30 @@ export default () => {
   useEffect(() => {
     getRenderListByPageChange();
   }, [allImgList, currentPage, pageSize]);
+  // 重置表单数据
+  const resetForm = () => {
+    form.resetFields();
+  };
+  // 搜索按钮的回调函数
+  const searchSubmit = () => {
+    const values = form.getFieldsValue();
+    let arr = [...allImgList];
+    // 判定检索名字是否存在
+    if (values?.imageName) {
+      arr = arr.filter((item) => item.name.includes(values.imageName));
+    }
+    // 判定是否纯色
+    if (values?.pureOrNot) {
+      arr = arr.filter((item) => item.name.includes(values.pureOrNot));
+    }
+    // 判定性别
+    if (values?.sex) {
+      arr = arr.filter((item) => item.name.includes(values.sex));
+    }
+    setAllImgList(arr);
+    setCurrentPage(1);
+    setPageSize(50);
+  };
   return {
     treeList,
     selectThisNodes,
@@ -79,5 +102,7 @@ export default () => {
     pageSize,
     total,
     searchCondition,
+    resetForm,
+    searchSubmit,
   };
 };

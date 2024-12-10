@@ -17,6 +17,8 @@ const SearchCenter = () => {
     pageSize,
     total,
     searchCondition,
+    resetForm,
+    searchSubmit,
   } = Hooks();
   return (
     <div className={styles.searchContent}>
@@ -25,27 +27,53 @@ const SearchCenter = () => {
       </div>
       <div className="searchRight">
         {/* 这里放入搜索条件 */}
-        {
+        {searchCondition && (
           <div className="searchRightHead">
             <Form form={form} layout="inline">
-              <FormItem name="xxx" className="searchInt">
+              <FormItem name="imageName" label="图片名字" className="searchInt">
                 <Input placeholder="请输入检索条件" />
               </FormItem>
-              <FormItem name="yyy" className="searchSelect">
+              <FormItem
+                name="pureOrNot"
+                label="是否纯色"
+                className="searchSelect"
+                initialValue=""
+              >
                 <Select placeholder="请选择">
-                  <Option value="1">白景</Option>
-                  <Option value="2">夜景</Option>
+                  <Option value="">全部</Option>
+                  <Option value="pure">纯色</Option>
+                  <Option value="nopure">非纯色</Option>
                 </Select>
               </FormItem>
-              <Button type="primary" className="btn btnSearch">
+              <FormItem
+                name="sex"
+                label="性别"
+                className="searchSelect"
+                initialValue=""
+              >
+                <Select placeholder="请选择">
+                  <Option value="">全部</Option>
+                  <Option value="pure">纯色</Option>
+                  <Option value="nopure">非纯色</Option>
+                </Select>
+              </FormItem>
+              <Button
+                type="primary"
+                className="btn btnSearch"
+                onClick={searchSubmit}
+              >
                 查询
               </Button>
-              <Button type="default" className="btn btnReset">
+              <Button
+                type="default"
+                className="btn btnReset"
+                onClick={resetForm}
+              >
                 重置
               </Button>
             </Form>
           </div>
-        }
+        )}
         {/* 放入图片渲染模块 */}
         <div className="searchRightBody">
           <Scrollbars>
