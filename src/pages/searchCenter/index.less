@@ -1,0 +1,71 @@
+.searchContent {
+  width: 100%;
+  height: calc(100% - 80px);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  :global {
+    .searchLeft {
+      width: 350px;
+      height: 100%;
+      background: #fff;
+      border-radius: 4px;
+      padding: 10px;
+    }
+    .searchRight {
+      width: calc(100% - 360px);
+      height: 100%;
+      background: #fff;
+      border-radius: 4px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      .searchRightHead {
+        flex: none;
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        .searchInt {
+          width: 180px;
+        }
+        .searchSelect {
+          width: 180px;
+        }
+        .btn {
+          width: 80px;
+        }
+        .btnSearch {
+          margin-right: 10px;
+        }
+      }
+      .searchRightBody {
+        flex: auto;
+        width: 100%;
+        padding-bottom: 15px;
+        .searchRightCenter {
+          width: 100%;
+          height: auto;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          flex-wrap: wrap;
+          .searchRightItem {
+            width: 100px;
+            height: 100px;
+            margin-right: 15px;
+            margin-top: 15px;
+          }
+        }
+      }
+      .searchRightBottom {
+        flex: none;
+        width: 100%;
+        height: 40px;
+        padding-right: 15px;
+      }
+    }
+  }
+}

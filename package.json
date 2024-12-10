@@ -1,0 +1,42 @@
+{
+  "private": true,
+  "author": "qiyiguo7 <244837663@qq.com>",
+  "scripts": {
+    "build": "umi build",
+    "dev": "umi dev",
+    "postinstall": "umi setup",
+    "setup": "umi setup",
+    "start": "npm run dev"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.5.2",
+    "@types/react-custom-scrollbars": "^4.0.13",
+    "animate.css": "^4.1.1",
+    "antd": "^5.22.2",
+    "react": "17.x",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-dom": "17.x",
+    "umi": "^4.3.35"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "@umijs/preset-react": "1.x",
+    "@umijs/test": "^3.5.41",
+    "lint-staged": "^10.0.7",
+    "prettier": "^2.2.0",
+    "typescript": "^5.0.3",
+    "yorkie": "^2.0.0"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  }
+}

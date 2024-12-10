@@ -1,0 +1,39 @@
+.header {
+  width: 100%;
+  height: 80px;
+  padding: 0 20px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  :global {
+    .headerLeft {
+      .logoImage {
+        width: 152px;
+        height: 60px;
+      }
+    }
+    .headerCenter {
+      font-size: 36px; /* 字体大小 */
+      font-weight: bold; /* 字体加粗 */
+      background: linear-gradient(
+        90deg,
+        red,
+        orange,
+        yellow,
+        green,
+        blue,
+        indigo,
+        violet
+      );
+      background-clip: text; /* 文字背景裁剪 */
+      -webkit-background-clip: text; /* Safari 浏览器兼容 */
+      color: transparent; /* 透明文字用于显示背景 */
+      animation-duration: 2s; //动画持续时间完成
+      animation-iteration-count: 5; //是否循环执行动画
+    }
+    .headerRight {
+      cursor: pointer;
+    }
+  }
+}
